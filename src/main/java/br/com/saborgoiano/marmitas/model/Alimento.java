@@ -26,7 +26,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @ToString(includeFieldNames = true)
-public class Produto extends Model {
+public class Alimento extends Model {
    
    private static final long serialVersionUID = 1L;
    
@@ -49,30 +49,30 @@ public class Produto extends Model {
    @CharField(max_length = 7, default_value = "ATIVO")
    private String situacaoCadastro;
    
-   public static Manager objects = new Manager(Produto.class);
+   public static Manager objects = new Manager(Alimento.class);
    
-   public static Produto of(String nome, GrupoAlimento grupo, String descricao, String imagem, String thumbnail, String situacaoCadastro) {
-      return new Produto(nome, grupo, descricao, imagem, thumbnail, SituacaoCadastro.get(situacaoCadastro).valor());
+   public static Alimento of(String nome, GrupoAlimento grupo, String descricao, String imagem, String thumbnail, String situacaoCadastro) {
+      return new Alimento(nome, grupo, descricao, imagem, thumbnail, SituacaoCadastro.get(situacaoCadastro).valor());
    }
    
-   public static Produto of(String nome, GrupoAlimento grupo, String descricao, String imagem, String thumbnail) {
-      return new Produto(nome, grupo, descricao, imagem, thumbnail, SituacaoCadastro.ATIVO.valor());
+   public static Alimento of(String nome, GrupoAlimento grupo, String descricao, String imagem, String thumbnail) {
+      return new Alimento(nome, grupo, descricao, imagem, thumbnail, SituacaoCadastro.ATIVO.valor());
    }
    
-   public static Produto of(String nome, GrupoAlimento grupo, String descricao) {
-      return new Produto(nome, grupo, descricao, "", "", SituacaoCadastro.ATIVO.valor());
+   public static Alimento of(String nome, GrupoAlimento grupo, String descricao) {
+      return new Alimento(nome, grupo, descricao, "", "", SituacaoCadastro.ATIVO.valor());
    }
    
-   public static Produto of(String nome, GrupoAlimento grupo) {
-      return new Produto(nome, grupo, "", "", "", SituacaoCadastro.ATIVO.valor());
+   public static Alimento of(String nome, GrupoAlimento grupo) {
+      return new Alimento(nome, grupo, "", "", "", SituacaoCadastro.ATIVO.valor());
    }
    
-   public static Produto of(String nome) {
-      return new Produto(nome, null, "", "", "", SituacaoCadastro.ATIVO.valor());
+   public static Alimento of(String nome) {
+      return new Alimento(nome, null, "", "", "", SituacaoCadastro.ATIVO.valor());
    }
    
-   public static Produto of() {
-      return new Produto();
+   public static Alimento of() {
+      return new Alimento();
    }
    
    public String getNome() {

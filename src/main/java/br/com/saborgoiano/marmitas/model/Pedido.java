@@ -57,13 +57,13 @@ public class Pedido extends Model {
    @CharField(max_length = 10, default_value = "REGISTRADO")
    private String situacaoPedido;
    
-   private List<Produto> itens = new ArrayList<>();
+   private List<Alimento> itens = new ArrayList<>();
    
-   public static final List<Produto> LISTA_ALIMENTOS_VAZIA = new ArrayList<>(0);
+   public static final List<Alimento> LISTA_ALIMENTOS_VAZIA = new ArrayList<>(0);
    
    public static Manager objects = new Manager(Pedido.class);
    
-   public static Pedido of(Cliente cliente, Date data, BigDecimal preco, String descricao, String observacoes, String situacao, List<Produto> itens) {
+   public static Pedido of(Cliente cliente, Date data, BigDecimal preco, String descricao, String observacoes, String situacao, List<Alimento> itens) {
       return new Pedido(cliente, data, preco, descricao, observacoes, SituacaoPedido.get(situacao).valor(), itens);
    }
    
@@ -87,7 +87,7 @@ public class Pedido extends Model {
       return new Pedido(cliente, new Date(), preco, "", "", SituacaoPedido.REGISTRADO.valor(), LISTA_ALIMENTOS_VAZIA);
    }
    
-   public static Pedido of(Cliente cliente, Date data, Double preco, String descricao, String observacoes, String situacao, List<Produto> itens) {
+   public static Pedido of(Cliente cliente, Date data, Double preco, String descricao, String observacoes, String situacao, List<Alimento> itens) {
       return new Pedido(cliente, data, new BigDecimal(preco), descricao, observacoes, SituacaoPedido.get(situacao).valor(), itens);
    }
    
