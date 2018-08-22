@@ -1,0 +1,23 @@
+{
+  "name": "marmitas",
+  "homepage": "https://github.com/pydawan/marmitas",
+  "authors": [
+    "Thiago Alexandre <thicmp@gmail.com>"
+  ],
+  "description": "Sistema de Pedidos de Marmitas através da Internet",
+  "main": "main.js",
+  "keywords": [
+    "Marmita",
+    "Alimentação",
+    "Delivery",
+    "Internet"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

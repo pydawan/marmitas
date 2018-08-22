@@ -1,0 +1,94 @@
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+archivesBaseName = 'marmitas'
+group = 'br.com.saborgoiano.marmitas'
+version = 'v1.0.0'
+
+eclipse {
+   wtp {
+      component {
+         contextPath = 'marmitas'
+      }
+      facet {
+         facet name: 'java', version: '1.8'
+         facet name: 'jst.web', version: '3.0'
+      }
+   }
+}
+
+eclipse.project {
+   natures 'org.springsource.ide.eclipse.gradle.core.nature'
+}
+
+repositories {
+   mavenLocal()
+   mavenCentral()
+   maven {
+      url 'http://repository.primefaces.org'
+   }
+   maven {
+      url 'http://jaspersoft.artifactoryonline.com/jaspersoft/third-party-ce-artifacts'
+   }
+}
+
+dependencies {
+   
+   compile 'org.jboss.weld.servlet:weld-servlet-core:2.1.2.Final'
+   compile 'org.jboss.weld:weld-core-impl:2.1.2.Final'
+   providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+   compile 'jstl:jstl:1.2'
+   compile 'br.com.caelum:vraptor:4.2.2'
+   compile 'br.com.caelum.vraptor:vraptor-java8:4.0.0.Final'
+   compile 'org.javassist:javassist:3.18.1-GA'
+   compile 'org.hibernate:hibernate-validator:5.1.1.Final'
+   compile 'org.hibernate:hibernate-validator-cdi:5.1.1.Final'
+   compile 'org.projectlombok:lombok:1.16.20'
+   compile 'org.apache.shiro:shiro-core:1.3.2'
+   compile 'org.apache.shiro:shiro-web:1.3.2'
+   compile 'org.slf4j:slf4j-simple:1.6.1'
+   compile 'log4j:log4j:1.2.17'
+   compile 'com.mihnita:color-loggers:1.0.5'
+   compile 'org.lazyluke:log4jdbc-remix:0.2.7'
+   compile 'org.slf4j:slf4j-log4j12:1.7.10'
+   compile 'com.lowagie:itext:2.1.7'
+   compile 'net.sf.jasperreports:jasperreports:6.1.1'
+   compile 'org.fusesource.jansi:jansi:1.16'
+   compile 'org.apache.commons:commons-email:1.3.3'
+   
+   compile 'org.webjars:jquery:3.2.0'
+   compile 'org.webjars:jquery-ui:1.12.1'
+   compile 'org.webjars:normalize.css:3.0.2'
+   compile 'org.webjars.bower:bootstrap:3.3.5'
+   compile 'org.webjars.bower:font-awesome:4.7.0'
+   compile 'org.webjars:ionicons:2.0.1'
+   compile 'org.webjars.bower:Faker:2.1.5'
+   compile 'org.webjars:tablesorter:2.17.8'
+   compile 'org.webjars.bower:angularjs:1.5.7'
+   compile 'org.webjars.bower:angular-i18n:1.5.7'
+   compile 'org.webjars.bower:github-com-candreoliveira-ngMask:3.0.16'
+   compile 'org.webjars.bower:angular-messages:1.5.7'
+   
+   compile files('./src/main/webapp/WEB-INF/lib/config-parser-v1.0.0.jar')
+   compile files('./src/main/webapp/WEB-INF/lib/verify-v1.0.0.jar')
+   compile files('./src/main/webapp/WEB-INF/lib/jext-v1.0.0.jar')
+   compile files('./src/main/webapp/WEB-INF/lib/bootstrap.jsp.jar')
+   compile files('./src/main/webapp/WEB-INF/lib/jedi-app-v1.0.0.jar')
+   compile files('./src/main/webapp/WEB-INF/lib/jedi-orm-v1.0.0.jar')
+   compile files('./src/main/webapp/WEB-INF/lib/livereload-jvm.jar')
+   compile files('./src/main/webapp/WEB-INF/lib/pickle-v1.0.0.jar')
+   compile files('./src/main/webapp/WEB-INF/lib/arial.jar')
+   compile files('./src/main/webapp/WEB-INF/lib/times.jar')
+   compile files('./src/main/webapp/WEB-INF/lib/vraptor-paperclip.jar')
+   
+   testCompile 'junit:junit:4.12'
+
+}
+
+configurations.all {
+   exclude module: 'slf4j-log4j12'
+   exclude module: 'slf4j-simple'
+}

@@ -1,0 +1,6 @@
+{
+    "directory": "/home/thiago-amm/Documentos/eclipse/sts-workspace/bazar/src/main/webapp/static/bower",
+    "proxy": "http://10.85.64.2:3128",
+    "https-proxy": "http://10.85.64.2:3128",
+    "no-proxy": "localhost,127.0.0.1"
+}
