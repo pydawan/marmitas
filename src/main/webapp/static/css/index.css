@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.logotipo {
+   padding: 10px;
+}
+
+.logotipo img {
+   height: 30px;
+}
